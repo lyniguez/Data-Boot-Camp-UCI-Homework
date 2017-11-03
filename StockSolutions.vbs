@@ -107,7 +107,7 @@ AvgDailyChange = 0
 volume = 0
 Summary = Summary + 1
 
-' ticker is the same, add results up for each variable
+' ticker is the same, add results up
 Else
 
 volume = volume + Cells(i, 7).Value
@@ -144,7 +144,7 @@ gavchange = 0
 
 resultsrow = Cells(Rows.Count, "A").End(xlUp).Row
 
-'for loop to find greatest volume
+
 For i = 2 To resultsrow
 
 If Cells(i, 5) > gvolume Then
@@ -156,7 +156,6 @@ End If
 
 Next i
 
-'for loop to find greatest % increase
 For i = 2 To resultsrow
 
 If Cells(i, 3) > gpincrease Then
@@ -168,7 +167,6 @@ End If
 
 Next i
 
-'for loop to find greatest % decrease
 gpdecrease = Range("C2").Value
 
 For i = 2 To resultsrow
@@ -182,7 +180,7 @@ End If
 
 Next i
 
-'for loop to find greatest average change
+
 For i = 2 To resultsrow
 
 If Cells(i, 4) > gavchange Then
@@ -194,7 +192,6 @@ End If
 
 Next i
 
-'print values
 Sheets("Results").Range("H2").Value = gvolume
 Sheets("Results").Range("I2").Value = gticker
 
@@ -214,3 +211,10 @@ Sheets("Results").Range("H5").NumberFormat = "0.00%"
 Sheets("Results").Range("H8").NumberFormat = "0.00%"
 
 End Sub
+
+
+
+
+
+
+
